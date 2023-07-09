@@ -1,14 +1,14 @@
 let previewCountries= document.querySelector('.countries-preview');
 let previewBox = previewCountries.querySelectorAll('.preview');
 
-document.querySelectorAll('.countriesinf .flags').forEach(product =>{
-    product.onclick = () =>{
+document.querySelectorAll('.countriesinf .flags').forEach(flags =>{
+    flags.onclick = () =>{
         previewCountries.style.display='flex';
         let name = flags.getAttribute('data-name');
         previewBox.forEach(preview =>{
             let target= preview.getAttribute('data-target');
             if(name == target){
-                previewBox.classList.add('active');
+                preview.classList.add('active');
             }
         });
     };
