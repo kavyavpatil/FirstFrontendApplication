@@ -53,6 +53,8 @@ h5{
     height: 2rem;
 }
 
+ 
+
 
 
 footer{
@@ -209,7 +211,28 @@ p{
     }
  
  }
+ table,th,td{
+    border: 1px dotted black;
+ }
  
+ .ListPage{
+    padding: 10px;
+    text-align: center;
+    list-style: none;
+
+ }
+ .ListPage li{
+    background-color: #ffffffBD;
+    padding: 20px;
+    display: inline-block;
+    margin: 0 10px;
+    cursor:pointer;
+
+ }
+ .ListPage .active{
+    background-color: #B192EF;
+    color: #fff;
+ }
  
  
  

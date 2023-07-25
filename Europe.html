@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .cont{
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 7rem 2rem;
+    }
+    .cont .title{
+        font-size:5rem;
+        color: aliceblue;
+        margin-bottom: 10rem;
+        
+    
+    
+    }
+    .cont .countriesinf{
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(15rem, 9fr));
+        gap: 25px;
+    
+    
+    }
+    .cont .countriesinf .flags{
+        text-align: left;
+        background: white;
+        
+        box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+        outline: 2px solid #ccc;
+             
+    }
+    .cont .countriesinf .flags img{
+        height: 400px;
+        width: 200px;
+        margin-left: 40px;
+        
+    }
+    
+    .cont .countriesinf .flags:hover{
+        outline: .2rem solid #222;
+        outline-offset: 0;
+     }
+     .cont .countriesinf {
+        height: 200px;
+    
+        
+     }
+     .flags img{
+        width: 1000px;
+        max-height: 100px;
+        top: 10px;
+        bottom: 10px;
+     }
+     h3{
+        text-align: left;
+        margin-left: 39px;
+     }
+    p{
+        text-align: left;
+        margin-left: 39px;
+    }
+    .ListPage{
+        padding: 10px;
+        text-align: center;
+        list-style: none;
+    
+     }
+     .ListPage li{
+        background-color: #ffffffBD;
+        padding: 20px;
+        display: inline-block;
+        margin: 0 10px;
+        cursor:pointer;
+    
+     }
+     .ListPage .active{
+        background-color: #B192EF;
+        color: #fff;
+     }
+     .countries-preview{
+        position: fixed;
+        top:0; left:0;
+        min-height: 100vh;
+        width: 100%;
+        background: rgba(0,0,0,.8);;
+        display:none;
+        align-items: center;
+        justify-content: center;
+     }
+     .countries-preview .preview{
+       display: none;
+       padding: 1rem;
+       text-align: center;
+       background: #fff;
+       position: center;
+       margin:2rem;
+       width: 40rem;
+    }
+     
+    
+     
+     .countries-preview .preview.active{
+        display:inline-block;
+        
+        
+    
+     }  
+     .countries-preview .preview img{
+        max-height:200px ;
+        width: 250px;
+        margin-left: 40px;
+     }
+     .countries-preview .preview.fa-times{
+        position: absolute;
+        top:11300px; right:12000px;
+        color:black;
+        cursor: pointer;
+        font-size:4rem;
+     }
+     .countries-preview .preview .fa-times:hover{
+        transform: rotate(360 deg);
+     }
+     .idd{
+        margin-right: 50px;
+        margin-top: 1px;
+        margin-bottom: 150px;
+     }
+    
+     @media (max-width:991px){
+    
+        html{
+           font-size: 55%;
+        }
+     
+     }
+    
+     @media (max-width:768px){
+    
+        .countries-preview .preview img{
+           height: 25rem;
+        }
+     
+     }
+     
+     @media (max-width:450px){
+     
+        html{
+           font-size: 50%;
+        }
+     
+     }
+     table,th,td{
+        border: 1px dotted black;
+     }
+     </style>
+     </head>
+     <body>
+        <header>
+            <button style="color: cadetblue;"><a href="index.html" style="text-align: center;">Back to the main page</a></button>
+            
+            
+        </header>
+        <main>
+            <div class="cont">
+                <h3 class="title"></h3>
+                <div class="countriesinf">
+                    <div class="flags" data-name="p-1">
+                        <img src="image2.png">
+                        <h3>Aland Island</h3>
+                        <p>EUROPE</p>
+                    </div>
+                    <div class="flags" data-name="p-2">
+                        <img src="image3.png">
+                        <h3>Albania</h3>
+                        <p>EUROPE</p>
+                    </div>
+                    <div class="flags" data-name="p-5">
+                        <img src="image6.png">
+                        <h3>Andorra</h3>
+                        <p>EUROPE<p>
+                    </div>
+                    <div class="flags" data-name="p-11">
+                        <img src="image12.png">
+                        <h3>Austria</h3>
+                        <p>EUROPE </p>
+                    </div>
+                    <div class="flags" data-name="p-12">
+                        <img src="image13.png">
+                        <h3>Azerbaijan</h3>
+                        <p>ASIA /EUROPE</p>
+                    </div>
+                    <div class="flags" data-name="p-17">
+                        <img src="image18.png">
+                        <h3>Belarus</h3>
+                        <p>EUROPE</p>
+                    </div>
+                    <div class="flags" data-name="p-18">
+                        <img src="image19.png">
+                        <h3>Belgium</h3>
+                        <p>EUROPE </p>
+                    </div>
+                    <div class="flags" data-name="p-23">
+                        <img src="image24.png">
+                        <h3>Bosnia and Herzegovina</h3>
+                        <p>EUROPE </p>
+                    </div>
+                    <div class="flags" data-name="p-27">
+                        <img src="image28.png">
+                        <h3>Bulgaria</h3>
+                        <p>EUROPE</p>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="countries-preview">
+                <div class="preview active" data-target="p-1">
+                
+                    <h2 style="text-align: left;"><pre>                         Aland Island</pre></h2>
+                    <i class="fas fa-times">X</i>
+                    <img src="image2.png">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        
+    
+                    </div>
+                    <div>
+                        <table align="center">
+                            
+                            <tr>
+                                <td style="color: #222;">Capital City</td>
+                                <td style="color: grey;">   Mariehamn </td>
+                            </tr>
+                            <br/>
+                            <br/>
+                            <tr>
+                                <td style="color: #222;">Continent</td>
+                                <td style="color: grey;">Europe</td>
+                            </tr>
+                           
+                            <tr>
+                                <td style="color: #222;">Currency</td>
+                                <td style="color: grey;">Euro </td>
+                            </tr>
+                            
+                            <tr>
+                                <td style="color: #222;">Languages</td>
+                                <td style="color: grey;">  Swedish </td>
+    
+                            </tr>
+                           
+    
+                            <tr>
+                                <td style="color: #222;">CPopulation</td>
+                                <td style="color: grey;">  29 789</td>
+    
+                            </tr>
+                            
+                            <tr>
+                                <td style="color: #222;">Timezone</td>
+                                <td style="color: grey;">GMT+3</td>
+                            </tr>
+                            
+                        </table>
+                        
+    
+    
+                    </div>
+    
+    
+    
+                </div>
+                <div class="preview " data-target="p-2">
+                    
+                    <h2 style="text-align: left;"><pre>                         Albania</pre></h2>
+                    <i class="fas fa-times">X</i>
+    
+                    <img src="image3.png">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                       
+    
+                    </div>
+                    <div>
+                        <table align="center">
+                            
+                            <tr>
+                                <td style="color: #222;">Capital City</td>
+                                <td style="color: grey;">   Tirana </td>
+                            </tr>
+                            <br/>
+                            <br/>
+                            <tr>
+                                <td style="color: #222;">Continent</td>
+                                <td style="color: grey;">Europe</td>
+                            </tr>
+                           
+                            <tr>
+                                <td style="color: #222;">Currency</td>
+                                <td style="color: grey;">Albanian lek </td>
+                            </tr>
+                            
+                            <tr>
+                                <td style="color: #222;">Languages</td>
+                                <td style="color: grey;"> Albanian </td>
+    
+                            </tr>
+                           
+    
+                            <tr>
+                                <td style="color: #222;">CPopulation</td>
+                                <td style="color: grey;">2 862 427</td>
+    
+                            </tr>
+                            
+                            <tr>
+                                <td style="color: #222;">Timezone</td>
+                                <td style="color: grey;">GMT+2</td>
+                            </tr>
+                            
+                        </table>
+    
+                
+    
+                    </div>
+    
+    
+    
+                </div>
+                <div class="preview" data-target="p-5">
+                
+                    <h2 style="text-align: left;"><pre>                       Andorra</pre></h2>
+                    <i class="fas fa-times">X</i>
+                    <img src="image6.png">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        
+    
+                    </div>
+                    <div>
+                        <table align="center">
+                            
+                            <tr>
+                                <td style="color: #222;">Capital City</td>
+                                <td style="color: grey;">   Andorra la Vella </td>
+                            </tr>
+                            <br/>
+                            <br/>
+                            <tr>
+                                <td style="color: #222;">Continent</td>
+                                <td style="color: grey;">Europe</td>
+                            </tr>
+                           
+                            <tr>
+                                <td style="color: #222;">Currency</td>
+                                <td style="color: grey;">  Euro  </td>
+                            </tr>
+                            
+                            <tr>
+                                <td style="color: #222;">Languages</td>
+                                <td style="color: grey;"> Catalan </td>
+    
+                            </tr>
+                           
+    
+                            <tr>
+                                <td style="color: #222;">Population</td>
+                                <td style="color: grey;"> 77 543</td>
+    
+                            </tr>
+                            
+                            <tr>
+                                <td style="color: #222;">Timezone</td>
+                                <td style="color: grey;">GMT+2</td>
+                            </tr>
+                            
+                        </table>
+                        
+    
+    
+    
+    
+                    </div>
+    
+    
+    
+                </div>
+                <div class="preview" data-target="p-7">
+                
+                    <h2 style="text-align: left;"><pre>                        Anguilla</pre></h2>
+                    <i class="fas fa-times">X</i>
+                    <img src="image8.png">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                       
+    
+                    </div>
+                    <div>
+                        <table align="center">
+                            
+                            <tr>
+                                <td style="color: #222;">Capital City</td>
+                                <td style="color: grey;">   Valley </td>
+                            </tr>
+                            <br/>
+                            <br/>
+                            <tr>
+                                <td style="color: #222;">Continent</td>
+                                <td style="color: grey;">Europe</td>
+                            </tr>
+                           
+                            <tr>
+                                <td style="color: #222;">Currency</td>
+                                <td style="color: grey;">Dollar  </td>
+                            </tr>
+                            
+                            <tr>
+                                <td style="color: #222;">Languages</td>
+                                <td style="color: grey;"> English </td>
+    
+                            </tr>
+                           
+    
+                            <tr>
+                                <td style="color: #222;">Population</td>
+                                <td style="color: grey;">14 869</td>
+    
+                            </tr>
+                            
+                            <tr>
+                                <td style="color: #222;">Timezone</td>
+                                <td style="color: grey;">GMT-4</td>
+                            </tr>
+                            
+                        </table>
+                        
+                    </div>
+    
+    
+    
+                </div>
+                <div class="preview " data-target="p-11">
+                
+                    <h2 style="text-align: left;"><pre>                    Austria</pre></h2>
+                    <i class="fa fa-times">X</i>
+                    <img src="image12.png">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                       
+    
+                    </div>
+                    <div>
+                        <table align="center">
+                            
+                            <tr>
+                                <td style="color: #222;">Capital City</td>
+                                <td style="color: grey;">   Vienna </td>
+                            </tr>
+                            <br/>
+                            <br/>
+                            <tr>
+                                <td style="color: #222;">Continent</td>
+                                <td style="color: grey;">Europe</td>
+                            </tr>
+                           
+                            <tr>
+                                <td style="color: #222;">Currency</td>
+                                <td style="color: grey;">Euro</td>
+                            </tr>
+                            
+                            <tr>
+                                <td style="color: #222;">Languages</td>
+                                <td style="color: grey;">German</td>
+    
+                            </tr>
+                           
+    
+                            <tr>
+                                <td style="color: #222;">Population</td>
+                                <td style="color: grey;">89.6 lakhs</td>
+    
+                            </tr>
+                            
+                            <tr>
+                                <td style="color: #222;">Timezone</td>
+                                <td style="color: grey;"> GMT+2</td>
+                            </tr>
+                            
+                        </table>
+    
+    
+    
+    
+                    </div>
+    
+    
+    
+                </div>
+                <div class="preview " data-target="p-12">
+                
+                    <h2 style="text-align: left;"><pre></i>                     Azerbaijan</pre></h2>
+                    <i class="fa fa-times">X</i>
+                    <img src="image13.png">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                       
+    
+                    </div>
+                    <div>
+                        <table align="center">
+                            <tr>
+                                <td style="color: #222;">Capital City</td>
+                                <td style="color: grey;">   Baku </td>
+                            </tr>
+                            <br/>
+                            <br/>
+                            <tr>
+                                <td style="color: #222;">Continent</td>
+                                <td style="color: grey;">Europe/Asia</td>
+                            </tr>
+                           
+                            <tr>
+                                <td style="color: #222;">Currency</td>
+                                <td style="color: grey;">Manat</td>
+                            </tr>
+                            
+                            <tr>
+                                <td style="color: #222;">Languages</td>
+                                <td style="color: grey;">Azerbaijani</td>
+    
+                            </tr>
+                           
+    
+                            <tr>
+                                <td style="color: #222;">Population</td>
+                                <td style="color: grey;">1.01 crores</td>
+    
+                            </tr>
+                            
+                            <tr>
+                                <td style="color: #222;">Timezone</td>
+                                <td style="color: grey;"> GMT+4</td>
+                            </tr>
+                        </table>
+    
+    
+                    </div>
+    
+    
+    
+                </div>
+                <div class="preview " data-target="p-17">
+                
+                    <h2 style="text-align: left;"><pre></i>                     Belarus</pre></h2>
+                    <i class="fa fa-times">X</i>
+                    <img src="image18.png">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                       
+    
+                    </div>
+                    <div>
+                        <table align="center">
+                            <tr>
+                                <td style="color: #222;">Capital City</td>
+                                <td style="color: grey;">   Minsk </td>
+                            </tr>
+                            <br/>
+                            <br/>
+                            <tr>
+                                <td style="color: #222;">Continent</td>
+                                <td style="color: grey;">Europe</td>
+                            </tr>
+                           
+                            <tr>
+                                <td style="color: #222;">Currency</td>
+                                <td style="color: grey;">Belarusian Ruble</td>
+                            </tr>
+                            
+                            <tr>
+                                <td style="color: #222;">Languages</td>
+                                <td style="color: grey;">Belarus</td>
+    
+                            </tr>
+                           
+    
+                            <tr>
+                                <td style="color: #222;">Population</td>
+                                <td style="color: grey;">93.4 lakhs</td>
+    
+                            </tr>
+                            
+                            <tr>
+                                <td style="color: #222;">Timezone</td>
+                                <td style="color: grey;"> GMT+3</td>
+                            </tr>
+                        </table>
+    
+    
+                    </div>
+    
+    
+    
+                </div>
+                <div class="preview " data-target="p-18">
+                
+                    <h2 style="text-align: left;"><pre></i>                     Belgium</pre></h2>
+                    <i class="fa fa-times">X</i>
+                    <img src="image19.png">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                       
+    
+                    </div>
+                    <div>
+                        <table align="center">
+                            <tr>
+                                <td style="color: #222;">Capital City</td>
+                                <td style="color: grey;">   Brussels </td>
+                            </tr>
+                            <br/>
+                            <br/>
+                            <tr>
+                                <td style="color: #222;">Continent</td>
+                                <td style="color: grey;">Europe</td>
+                            </tr>
+                           
+                            <tr>
+                                <td style="color: #222;">Currency</td>
+                                <td style="color: grey;">Belgian Franc</td>
+                            </tr>
+                            
+                            <tr>
+                                <td style="color: #222;">Languages</td>
+                                <td style="color: grey;">Dutch</td>
+    
+                            </tr>
+                           
+    
+                            <tr>
+                                <td style="color: #222;">Population</td>
+                                <td style="color: grey;">1.16 crores</td>
+    
+                            </tr>
+                            
+                            <tr>
+                                <td style="color: #222;">Timezone</td>
+                                <td style="color: grey;"> GMT+2</td>
+                            </tr>
+                        </table>
+    
+    
+                    </div>
+    
+    
+    
+                </div>
+                <div class="preview " data-target="p-23">
+                
+                    <h2 style="text-align: left;"><pre></i>                     Bosnia and Herzegovina</pre></h2>
+                    <i class="fa fa-times">X</i>
+                    <img src="image24.png">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                       
+    
+                    </div>
+                    <div>
+                        <table align="center">
+                            <tr>
+                                <td style="color: #222;">Capital City</td>
+                                <td style="color: grey;">   Sarajevo</td>
+                            </tr>
+                            <br/>
+                            <br/>
+                            <tr>
+                                <td style="color: #222;">Continent</td>
+                                <td style="color: grey;">Southeastern Europe</td>
+                            </tr>
+                           
+                            <tr>
+                                <td style="color: #222;">Currency</td>
+                                <td style="color: grey;">Bosnian Mark</td>
+                            </tr>
+                            
+                            <tr>
+                                <td style="color: #222;">Languages</td>
+                                <td style="color: grey;">Bosnian, Croatian, and Serbian</td>
+    
+                            </tr>
+                           
+    
+                            <tr>
+                                <td style="color: #222;">Population</td>
+                                <td style="color: grey;">32.7 lakhs</td>
+    
+                            </tr>
+                            
+                            <tr>
+                                <td style="color: #222;">Timezone</td>
+                                <td style="color: grey;"> GMT+2</td>
+                            </tr>
+                        </table>
+    
+    
+                    </div>
+    
+    
+    
+                </div>
+                <div class="preview " data-target="p-27">
+                
+                    <h2 style="text-align: left;"><pre></i>                     Bulgaria</pre></h2>
+                    <i class="fa fa-times">X</i>
+                    <img src="image28.png">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                       
+    
+                    </div>
+                    <div>
+                        <table align="center">
+                            <tr>
+                                <td style="color: #222;">Capital City</td>
+                                <td style="color: grey;">   Sofia </td>
+                            </tr>
+                            <br/>
+                            <br/>
+                            <tr>
+                                <td style="color: #222;">Continent</td>
+                                <td style="color: grey;">Europe</td>
+                            </tr>
+                           
+                            <tr>
+                                <td style="color: #222;">Currency</td>
+                                <td style="color: grey;">Lev</td>
+                            </tr>
+                            
+                            <tr>
+                                <td style="color: #222;">Languages</td>
+                                <td style="color: grey;">Bulgarian</td>
+    
+                            </tr>
+                           
+    
+                            <tr>
+                                <td style="color: #222;">Population</td>
+                                <td style="color: grey;">68.8 lakhs</td>
+    
+                            </tr>
+                            
+                            <tr>
+                                <td style="color: #222;">Timezone</td>
+                                <td style="color: grey;"> GMT+3</td>
+                            </tr>
+                        </table>
+    
+    
+                    </div>
+    
+    
+    
+                </div>
+
+                    
+                </div>
+            </main>
+                <script>
+                        let previewCountries= document.querySelector('.countries-preview');
+                        let previewBox = previewCountries.querySelectorAll('.preview');
+                        document.querySelectorAll('.countriesinf .flags').forEach(flags =>{
+                            flags.onclick = () =>{
+                                previewCountries.style.display='flex';
+                                let name = flags.getAttribute('data-name');
+                                previewBox.forEach(preview =>{
+                                    let target= preview.getAttribute('data-target');
+                                    if(name == target){
+                                        preview.classList.add('active');
+                                    }
+                                });
+                            };
+                        });
+                        previewBox.forEach(close =>{
+                            close.querySelector('.fa-times').onclick = () =>{
+                                close.classList.remove('active');
+                                previewCountries.style.display = 'none';
+                            };
+                        });
+                    </script>
+                    </body>
+                    </html>
+

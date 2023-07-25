@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .cont{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 7rem 2rem;
+}
+.cont .title{
+    font-size:5rem;
+    color: aliceblue;
+    margin-bottom: 10rem;
+    
+
+
+}
+.cont .countriesinf{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(15rem, 9fr));
+    gap: 25px;
+
+
+}
+.cont .countriesinf .flags{
+    text-align: left;
+    background: white;
+    
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+    outline: 2px solid #ccc;
+         
+}
+.cont .countriesinf .flags img{
+    height: 400px;
+    width: 200px;
+    margin-left: 40px;
+    
+}
+
+.cont .countriesinf .flags:hover{
+    outline: .2rem solid #222;
+    outline-offset: 0;
+ }
+ .cont .countriesinf {
+    height: 200px;
+
+    
+ }
+ .flags img{
+    width: 1000px;
+    max-height: 100px;
+    top: 10px;
+    bottom: 10px;
+ }
+ h3{
+    text-align: left;
+    margin-left: 39px;
+ }
+p{
+    text-align: left;
+    margin-left: 39px;
+}
+.ListPage{
+    padding: 10px;
+    text-align: center;
+    list-style: none;
+
+ }
+ .ListPage li{
+    background-color: #ffffffBD;
+    padding: 20px;
+    display: inline-block;
+    margin: 0 10px;
+    cursor:pointer;
+
+ }
+ .ListPage .active{
+    background-color: #B192EF;
+    color: #fff;
+ }
+ .countries-preview{
+    position: fixed;
+    top:0; left:0;
+    min-height: 100vh;
+    width: 100%;
+    background: rgba(0,0,0,.8);;
+    display:none;
+    align-items: center;
+    justify-content: center;
+ }
+ .countries-preview .preview{
+   display: none;
+   padding: 1rem;
+   text-align: center;
+   background: #fff;
+   position: center;
+   margin:2rem;
+   width: 40rem;
+}
+ 
+
+ 
+ .countries-preview .preview.active{
+    display:inline-block;
+    
+    
+
+ }  
+ .countries-preview .preview img{
+    max-height:200px ;
+    width: 250px;
+    margin-left: 40px;
+ }
+ .countries-preview .preview.fa-times{
+    position: absolute;
+    top:11300px; right:12000px;
+    color:black;
+    cursor: pointer;
+    font-size:4rem;
+ }
+ .countries-preview .preview .fa-times:hover{
+    transform: rotate(360 deg);
+ }
+ .idd{
+    margin-right: 50px;
+    margin-top: 1px;
+    margin-bottom: 150px;
+ }
+
+ @media (max-width:991px){
+
+    html{
+       font-size: 55%;
+    }
+ 
+ }
+
+ @media (max-width:768px){
+
+    .countries-preview .preview img{
+       height: 25rem;
+    }
+ 
+ }
+ 
+ @media (max-width:450px){
+ 
+    html{
+       font-size: 50%;
+    }
+ 
+ }
+ table,th,td{
+    border: 1px dotted black;
+ }
+ 
+ 
+    </style>
+</head>
+<body>
+    <ul class="ListPage">
+        <a href="index.html" ><li class="active">1</li></a>
+        <a href="two.html" ><li  class="active">2</li></a>
+        <li class="active">3</li>
+    </ul>
+    <main>
+        <div class="cont">
+            <h3 class="title"></h3>
+            <div class="countriesinf">
+                <div class="flags" data-name="p-21">
+                    <img src="image22.png">
+                    <h3>Bhutan</h3>
+                    <p>ASIA </p>
+                </div>
+                <div class="flags" data-name="p-22">
+                    <img src="image23.png">
+                    <h3>Bolivia</h3>
+                    <p>SOUTH AMERICA</p>
+                </div>
+                <div class="flags" data-name="p-23">
+                    <img src="image24.png">
+                    <h3>Bosnia and Herzegovina</h3>
+                    <p>EUROPE </p>
+                </div>
+                <div class="flags" data-name="p-24">
+                    <img src="image25.png">
+                    <h3>Botswana</h3>
+                    <p>AFRICA </p>
+                </div>
+                <div class="flags" data-name="p-25">
+                    <img src="image26.png">
+                    <h3>Brazil</h3>
+                    <p>SOUTH AMERICA </p>
+                </div>
+                <div class="flags" data-name="p-26">
+                    <img src="image27.png">
+                    <h3>Brunei</h3>
+                    <p>ASIA</p>
+                </div>
+                <div class="flags" data-name="p-27">
+                    <img src="image28.png">
+                    <h3>Bulgaria</h3>
+                    <p>EUROPE</p>
+                </div>
+                <div class="flags" data-name="p-28">
+                    <img src="image29.png">
+                    <h3>Burkina Faso</h3>
+                    <p>AFRICA </p>
+                </div>
+                <div class="flags" data-name="p-29">
+                    <img src="image30.png">
+                    <h3>Burundi</h3>
+                    <p>AFRICA  </p>
+                </div>
+                
+
+                
+        </div>
+        <div class="countries-preview">
+            <div class="preview " data-target="p-21">
+                
+                <h2 style="text-align: left;"><pre>                    	Bhutan</pre></h2>
+                <i class="fa fa-times">X</i>
+                <img src="image22.png">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                   
+
+                </div>
+                <div>
+                    <table align="center">
+                        
+                        <tr>
+                            <td style="color: #222;">Capital City</td>
+                            <td style="color: grey;">   Thimphu</td>
+                        </tr>
+                        <br/>
+                        <br/>
+                        <tr>
+                            <td style="color: #222;">Continent</td>
+                            <td style="color: grey;">Asia</td>
+                        </tr>
+                       
+                        <tr>
+                            <td style="color: #222;">Currency</td>
+                            <td style="color: grey;">Bhutanese ngultrum</td>
+                        </tr>
+                        
+                        <tr>
+                            <td style="color: #222;">Languages</td>
+                            <td style="color: grey;">Dzongkha</td>
+
+                        </tr>
+                       
+
+                        <tr>
+                            <td style="color: #222;">Population</td>
+                            <td style="color: grey;">7.77 lakhs</td>
+
+                        </tr>
+                        
+                        <tr>
+                            <td style="color: #222;">Timezone</td>
+                            <td style="color: grey;"> GMT+6</td>
+                        </tr>
+                        
+                    </table>
+
+
+
+
+                </div>
+
+
+
+            </div>
+            <div class="preview " data-target="p-22">
+                
+                <h2 style="text-align: left;"><pre></i>                     Bolivia</pre></h2>
+                <i class="fa fa-times">X</i>
+                <img src="image23.png">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                   
+
+                </div>
+                <div>
+                    <table align="center">
+                        <tr>
+                            <td style="color: #222;">Capital City</td>
+                            <td style="color: grey;">   La Paz </td>
+                        </tr>
+                        <br/>
+                        <br/>
+                        <tr>
+                            <td style="color: #222;">Continent</td>
+                            <td style="color: grey;">South America</td>
+                        </tr>
+                       
+                        <tr>
+                            <td style="color: #222;">Currency</td>
+                            <td style="color: grey;">Bolivian Boliviano</td>
+                        </tr>
+                        
+                        <tr>
+                            <td style="color: #222;">Languages</td>
+                            <td style="color: grey;">Spanish</td>
+
+                        </tr>
+                       
+
+                        <tr>
+                            <td style="color: #222;">Population</td>
+                            <td style="color: grey;">1.21 crores</td>
+
+                        </tr>
+                        
+                        <tr>
+                            <td style="color: #222;">Timezone</td>
+                            <td style="color: grey;"> GMT-4</td>
+                        </tr>
+                    </table>
+
+
+                </div>
+
+
+
+            </div>
+            <div class="preview " data-target="p-23">
+                
+                <h2 style="text-align: left;"><pre></i>                     Bosnia and Herzegovina</pre></h2>
+                <i class="fa fa-times">X</i>
+                <img src="image24.png">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                   
+
+                </div>
+                <div>
+                    <table align="center">
+                        <tr>
+                            <td style="color: #222;">Capital City</td>
+                            <td style="color: grey;">   Sarajevo</td>
+                        </tr>
+                        <br/>
+                        <br/>
+                        <tr>
+                            <td style="color: #222;">Continent</td>
+                            <td style="color: grey;">Southeastern Europe</td>
+                        </tr>
+                       
+                        <tr>
+                            <td style="color: #222;">Currency</td>
+                            <td style="color: grey;">Bosnian Mark</td>
+                        </tr>
+                        
+                        <tr>
+                            <td style="color: #222;">Languages</td>
+                            <td style="color: grey;">Bosnian, Croatian, and Serbian</td>
+
+                        </tr>
+                       
+
+                        <tr>
+                            <td style="color: #222;">Population</td>
+                            <td style="color: grey;">32.7 lakhs</td>
+
+                        </tr>
+                        
+                        <tr>
+                            <td style="color: #222;">Timezone</td>
+                            <td style="color: grey;"> GMT+2</td>
+                        </tr>
+                    </table>
+
+
+                </div>
+
+
+
+            </div>
+            <div class="preview " data-target="p-24">
+                
+                <h2 style="text-align: left;"><pre></i>                     Botswana</pre></h2>
+                <i class="fa fa-times">X</i>
+                <img src="image25.png">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                   
+
+                </div>
+                <div>
+                    <table align="center">
+                        <tr>
+                            <td style="color: #222;">Capital City</td>
+                            <td style="color: grey;">   Gaborone </td>
+                        </tr>
+                        <br/>
+                        <br/>
+                        <tr>
+                            <td style="color: #222;">Continent</td>
+                            <td style="color: grey;">Africa</td>
+                        </tr>
+                       
+                        <tr>
+                            <td style="color: #222;">Currency</td>
+                            <td style="color: grey;">Botswanan Pula</td>
+                        </tr>
+                        
+                        <tr>
+                            <td style="color: #222;">Languages</td>
+                            <td style="color: grey;">English</td>
+
+                        </tr>
+                       
+
+                        <tr>
+                            <td style="color: #222;">Population</td>
+                            <td style="color: grey;">25.9 lakhs</td>
+
+                        </tr>
+                        
+                        <tr>
+                            <td style="color: #222;">Timezone</td>
+                            <td style="color: grey;"> GMT+2</td>
+                        </tr>
+                    </table>
+
+
+                </div>
+
+
+
+            </div>
+            <div class="preview " data-target="p-25">
+                
+                <h2 style="text-align: left;"><pre></i>                     	Brazil</pre></h2>
+                <i class="fa fa-times">X</i>
+                <img src="image26.png">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                   
+
+                </div>
+                <div>
+                    <table align="center">
+                        <tr>
+                            <td style="color: #222;">Capital City</td>
+                            <td style="color: grey;">   Brasilia, </td>
+                        </tr>
+                        <br/>
+                        <br/>
+                        <tr>
+                            <td style="color: #222;">Continent</td>
+                            <td style="color: grey;">South America</td>
+                        </tr>
+                       
+                        <tr>
+                            <td style="color: #222;">Currency</td>
+                            <td style="color: grey;">Currencies / Brazil</td>
+                        </tr>
+                        
+                        <tr>
+                            <td style="color: #222;">Languages</td>
+                            <td style="color: grey;">Portuguese</td>
+
+                        </tr>
+                       
+
+                        <tr>
+                            <td style="color: #222;">Population</td>
+                            <td style="color: grey;">21.43 crores</td>
+
+                        </tr>
+                        
+                        <tr>
+                            <td style="color: #222;">Timezone</td>
+                            <td style="color: grey;"> GMT-3</td>
+                        </tr>
+                    </table>
+
+
+                </div>
+
+
+
+            </div>
+            <div class="preview " data-target="p-26">
+                
+                <h2 style="text-align: left;"><pre></i>                     Brunei</pre></h2>
+                <i class="fa fa-times">X</i>
+                <img src="image27.png">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                   
+
+                </div>
+                <div>
+                    <table align="center">
+                        <tr>
+                            <td style="color: #222;">Capital City</td>
+                            <td style="color: grey;">   Bandar Seri Begawan</td>
+                        </tr>
+                        <br/>
+                        <br/>
+                        <tr>
+                            <td style="color: #222;">Continent</td>
+                            <td style="color: grey;">South-East Asia.</td>
+                        </tr>
+                       
+                        <tr>
+                            <td style="color: #222;">Currency</td>
+                            <td style="color: grey;">Brunei Dollar</td>
+                        </tr>
+                        
+                        <tr>
+                            <td style="color: #222;">Languages</td>
+                            <td style="color: grey;">Malay</td>
+
+                        </tr>
+                       
+
+                        <tr>
+                            <td style="color: #222;">Population</td>
+                            <td style="color: grey;">4.45 lakhs</td>
+
+                        </tr>
+                        
+                        <tr>
+                            <td style="color: #222;">Timezone</td>
+                            <td style="color: grey;"> GMT+8</td>
+                        </tr>
+                    </table>
+
+
+                </div>
+
+
+
+            </div>
+            <div class="preview " data-target="p-27">
+                
+                <h2 style="text-align: left;"><pre></i>                     Bulgaria</pre></h2>
+                <i class="fa fa-times">X</i>
+                <img src="image28.png">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                   
+
+                </div>
+                <div>
+                    <table align="center">
+                        <tr>
+                            <td style="color: #222;">Capital City</td>
+                            <td style="color: grey;">   Sofia </td>
+                        </tr>
+                        <br/>
+                        <br/>
+                        <tr>
+                            <td style="color: #222;">Continent</td>
+                            <td style="color: grey;">Europe</td>
+                        </tr>
+                       
+                        <tr>
+                            <td style="color: #222;">Currency</td>
+                            <td style="color: grey;">Lev</td>
+                        </tr>
+                        
+                        <tr>
+                            <td style="color: #222;">Languages</td>
+                            <td style="color: grey;">Bulgarian</td>
+
+                        </tr>
+                       
+
+                        <tr>
+                            <td style="color: #222;">Population</td>
+                            <td style="color: grey;">68.8 lakhs</td>
+
+                        </tr>
+                        
+                        <tr>
+                            <td style="color: #222;">Timezone</td>
+                            <td style="color: grey;"> GMT+3</td>
+                        </tr>
+                    </table>
+
+
+                </div>
+
+
+
+            </div>
+            <div class="preview " data-target="p-28">
+                
+                <h2 style="text-align: left;"><pre></i>                    Burkina Faso</pre></h2>
+                <i class="fa fa-times">X</i>
+                <img src="image29.png">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                   
+
+                </div>
+                <div>
+                    <table align="center">
+                        <tr>
+                            <td style="color: #222;">Capital City</td>
+                            <td style="color: grey;">   Ouagadougou </td>
+                        </tr>
+                        <br/>
+                        <br/>
+                        <tr>
+                            <td style="color: #222;">Continent</td>
+                            <td style="color: grey;">West Africa</td>
+                        </tr>
+                       
+                        <tr>
+                            <td style="color: #222;">Currency</td>
+                            <td style="color: grey;">West African CFA franc</td>
+                        </tr>
+                        
+                        <tr>
+                            <td style="color: #222;">Languages</td>
+                            <td style="color: grey;">French</td>
+
+                        </tr>
+                       
+
+                        <tr>
+                            <td style="color: #222;">Population</td>
+                            <td style="color: grey;">12.21 crores</td>
+
+                        </tr>
+                        
+                        <tr>
+                            <td style="color: #222;">Timezone</td>
+                            <td style="color: grey;"> GMT</td>
+                        </tr>
+                    </table>
+
+
+                </div>
+
+
+
+            </div>
+            <div class="preview " data-target="p-29">
+                
+                <h2 style="text-align: left;"><pre></i>                     Burundi</pre></h2>
+                <i class="fa fa-times">X</i>
+                <img src="image30.png">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                   
+
+                </div>
+                <div>
+                    <table align="center">
+                        <tr>
+                            <td style="color: #222;">Capital City</td>
+                            <td style="color: grey;">   Bujumbura </td>
+                        </tr>
+                        <br/>
+                        <br/>
+                        <tr>
+                            <td style="color: #222;">Continent</td>
+                            <td style="color: grey;">Africa</td>
+                        </tr>
+                       
+                        <tr>
+                            <td style="color: #222;">Currency</td>
+                            <td style="color: grey;">Burundian Franc</td>
+                        </tr>
+                        
+                        <tr>
+                            <td style="color: #222;">Languages</td>
+                            <td style="color: grey;">Kirundi and French</td>
+
+                        </tr>
+                       
+
+                        <tr>
+                            <td style="color: #222;">Population</td>
+                            <td style="color: grey;">1.26 crores</td>
+
+                        </tr>
+                        
+                        <tr>
+                            <td style="color: #222;">Timezone</td>
+                            <td style="color: grey;"> GMT+2</td>
+                        </tr>
+                    </table>
+
+
+                </div>
+
+
+
+            </div>
+            
+
+        </div>
+
+    </main>
+    <script>
+        let previewCountries= document.querySelector('.countries-preview');
+        let previewBox = previewCountries.querySelectorAll('.preview');
+        document.querySelectorAll('.countriesinf .flags').forEach(flags =>{
+            flags.onclick = () =>{
+                previewCountries.style.display='flex';
+                let name = flags.getAttribute('data-name');
+                previewBox.forEach(preview =>{
+                    let target= preview.getAttribute('data-target');
+                    if(name == target){
+                        preview.classList.add('active');
+                    }
+                });
+            };
+        });
+        previewBox.forEach(close =>{
+            close.querySelector('.fa-times').onclick = () =>{
+                close.classList.remove('active');
+                previewCountries.style.display = 'none';
+            };
+        });
+    </script>
+</body>
+</html>
