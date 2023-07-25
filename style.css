@@ -158,15 +158,10 @@ p{
    margin:2rem;
    width: 40rem;
 }
- 
-
- 
- .countries-preview .preview.active{
+.countries-preview .preview.active{
     display:inline-block;
-    
-    
-
- }  
+}
+   
  .countries-preview .preview img{
     max-height:200px ;
     width: 250px;
